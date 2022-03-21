@@ -1,0 +1,19 @@
+<wxs src='../../utils/conversion.wxs' module="conversion"></wxs>
+
+<!--pages/home-video/index.wxml-->
+<view class="mv">
+  <block wx:for="{{ videoList }}" wx:key="id">
+    <view class="list">
+      <view class="cover">
+        <image src='{{item.cover}}' lazy-load='true' mode="widthFix"></image>
+        <view class="info">
+          <view class="count">{{ conversion.conversionPlayCount(item.playCount) }}</view>
+          <view class="duration">{{ item.mv.videos[0].duration }}</view>
+        </view>
+      </view>
+      <view class="content">
+        {{ item.name }} - {{ item.artistName }}
+      </view>
+    </view>
+  </block>
+</view>
