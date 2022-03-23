@@ -1,0 +1,23 @@
+<view class="recommend">      
+  <!-- 标题 -->
+  <area-header title="推荐歌单"></area-header>
+  <!-- 歌曲列表 -->
+  <view class="lists">
+    <block wx:for="{{ hotplayLists }}" wx:key="id">
+      <view class="list">
+        <view class="details">
+          <view class="cover">
+            <image src="{{ item.al.picUrl }}"></image>
+          </view>       
+          <view class="info">
+            <view class="title">{{ item.name }}</view>
+            <view class="author">{{ item.ar[0].name }} <block wx:if="{{item.alia.length}}">-</block> {{ item.alia }}</view>
+          </view>
+        </view>
+        <view class="more">
+          <van-icon name="arrow" color='#999' />
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

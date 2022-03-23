@@ -1,0 +1,26 @@
+<!--pages/detail-video/index.wxml-->
+<wxs src='../../utils/conversion.wxs' module="conversion"></wxs>
+
+<view class="detail_video">
+  <!-- 视频播放窗口 -->
+  <view class="mv">
+    <video 
+      src="{{ mvAddress.url }}"
+      danmu-btn
+      autoplay
+      loop
+    ></video>
+  </view>
+  <!-- 视频详情 -->
+  <view class="details">
+    <view class="title">{{ mvDetails.name }}</view>
+    <view class="author">
+      {{ mvDetails.artistName }} <block wx:if="{{ mvDetails.alias }}">-</block> {{ mvDetails.alias }}
+    </view>
+    <view class="visitor">
+      {{ conversion.conversionPlayCount(mvDetails.playCount) }}次播放 - {{ mvDetails.publishTime }}
+    </view>
+  </view>
+  <!-- 推荐视频 -->
+  <video-item-v2 mvLists="{{ relatedVideo }}"></video-item-v2>
+</view>

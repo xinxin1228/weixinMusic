@@ -1,0 +1,14 @@
+<view class="area-header">
+  <!-- 标题 -->
+  <view class="title">{{ title }}</view>
+  <!-- 更多  插槽代替 -->
+  <view class="more">
+    <view class="slot">
+      <slot></slot>
+    </view>
+    <view class="default" wx:if="{{ isShowMore }}">
+      <view class="text">更多</view>
+      <van-icon name="arrow" color="#999" />
+    </view>
+  </view>
+</view>

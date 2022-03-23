@@ -79,3 +79,110 @@ export interface MusicVideoTypes {
   }[]
   weekplays: number
 }
+
+// 请求音乐地址接口
+export interface AxiosMusicVideoTypes{
+  code: number
+  data: MusicVideoDataTypes
+}
+
+// 请求音乐地址数据接口
+export interface MusicVideoDataTypes{
+  code: number
+  expi: number
+  fee: number
+  id: number
+  md5: string
+  msg: string
+  mvFee: number
+  promotionVo: any
+  r: number
+  size: number
+  st: number
+  url: string | null
+}
+
+// 请求地址详情接口
+export interface AxiosVideoDetailsTypes{
+  bufferPic: string
+  bufferPicFS: string
+  code: number
+  data: VideoDetailsDataTypes
+  loadingPic: string
+  loadingPicFS: string
+  mp: {
+    cp: number
+    dl: number
+    fee: number
+    id: number
+    msg: any
+    mvFee: number
+    normal: boolean
+    payed: number
+    pl: number
+    sid: number
+    st: number
+    unauthorized: boolean
+  }
+  subed: boolean
+}
+
+// 请求地址详情数据接口
+export interface VideoDetailsDataTypes {
+  artistId: number
+  artistName: string
+  artists: {
+    followed: boolean
+    id: number
+    img1v1Url: any
+    name: string
+  }[]
+  briefDesc: string
+  brs: {
+    size: number
+    br: number
+    point: number
+  }[]
+  commentCount: number
+  commentThreadId: string
+  cover: string | null
+  coverId: number
+  coverId_str: string
+  desc: string | null
+  duration: number
+  id: number
+  nType: number
+  name: string
+  playCount: number
+  price: any
+  publishTime: string
+  shareCount: number
+  subCount: number
+  videoGroup: []
+}
+
+// 请求相关视频接口
+export interface AxiosRelatedVideoTypes {
+  code: number
+  data: Array<RelatedVideoDataTypes>
+  message: string
+}
+
+// 请求相关视频数据接口
+export interface RelatedVideoDataTypes {
+  alg: string
+  aliaName: any
+  coverUrl: string
+  creator: {
+    userId: number
+    userName: string
+  }[]
+  durationms: number
+  liveRoom: any
+  markTypes: []
+  playTime: number
+  title: string
+  transName: any
+  type: number
+  vid: string
+}

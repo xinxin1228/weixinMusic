@@ -1,3 +1,9 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "van-search": "@vant/weapp/search/index",
+    "music-recommend": "../../components/home-music/recommend/index",
+    "music-playlist": "../../components/home-music/playlist/index",
+    "music-peaklist": "../../components/home-music/peaklist/index"
+  },
+  "navigationBarTitleText": "音乐播放"
 }

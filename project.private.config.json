@@ -1,4 +1,5 @@
 {
+  "setting": {},
   "condition": {
     "plugin": {
       "list": []
@@ -14,6 +15,20 @@
         {
           "name": "home-video",
           "pathName": "pages/home-video/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "detail-video/index",
+          "pathName": "pages/detail-video/index",
+          "query": "id=14498408",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "detail-serch",
+          "pathName": "pages/detail-serch/index",
           "query": "",
           "scene": null,
           "launchMode": "default"

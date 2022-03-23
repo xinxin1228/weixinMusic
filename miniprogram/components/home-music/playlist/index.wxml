@@ -1,0 +1,11 @@
+<!-- 这里是歌单组件 -->
+<view class="playlist">
+  <!-- 标题 -->
+  <area-header title="{{ title }}"></area-header>
+  <!-- 歌单子项 -->
+  <scroll-view scroll-x class="items">
+    <block wx:for="{{ playlistData }}" wx:key="id">
+      <playlist-item itemData="{{ item }}"></playlist-item>
+    </block>
+  </scroll-view>
+</view>

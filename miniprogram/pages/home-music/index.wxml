@@ -1,2 +1,39 @@
 <!--pages/home-music/index.wxml-->
-<text>pages/home-music/index.wxml</text>
+<!-- 搜索框 -->
+<van-search 
+  placeholder="请输入喜欢的歌手和歌曲"
+  background='#fafafa'
+  disabled  
+  shape='round'
+  bind:click-input='handelSearchClick'
+></van-search>
+<!-- 轮播图 -->
+<swiper
+  indicator-dots
+  indicator-active-color="rgba(42, 235, 153, .8)"
+  indicator-color="rgba(255, 255, 255, .5)"
+  autoplay
+  circular
+  class="swiper"
+  style="height: {{swiperHeight}}px;"
+>
+  <block wx:for="{{ swipperData }}" wx:key="bannerId">
+    <swiper-item class="swiper-item">
+      <image 
+        bindload='handleImageLoad'
+        src="{{ item.pic }}" 
+        mode="widthFix"
+        class="swiper-image"
+      ></image>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 歌曲推荐 -->
+<music-recommend hotplayLists='{{ hotplayLists }}'></music-recommend>
+<!-- 热门歌单 -->
+<music-playlist title="热门歌单" playlistData="{{ topPlaylists }}"></music-playlist>
+<!-- 推荐歌单 -->
+<music-playlist title="推荐歌单" playlistData="{{ recommendPlaylist }}"></music-playlist>
+<!-- 巅峰榜 -->
+<music-peaklist peakRanking="{{ peakRanking }}"></music-peaklist>
+

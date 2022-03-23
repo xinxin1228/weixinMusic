@@ -8,8 +8,8 @@ const BASE_URL = 'http://123.207.32.32:9001'
 export interface AxiosTypes<T>{
   code: number
   data: T
-  hasMore: boolean
-  updateTime: number
+  hasMore?: boolean
+  updateTime?: number
 }
 
 class Axios{

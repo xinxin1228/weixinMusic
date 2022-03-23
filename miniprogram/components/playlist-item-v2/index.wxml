@@ -1,0 +1,29 @@
+<!-- 显示巅峰榜不同榜单的数据 -->
+<wxs src="../../utils/conversion.wxs" module="conver"></wxs>
+
+<view class="playLists">
+  <view class="playlist_item">
+    <view class="left">
+      <view class="title">
+        {{ RankingData.name }}
+      </view>
+      <view class="music">
+        <block wx:for="{{ RankingData.tracks }}" wx:key="*this">
+          <view class="row">
+            <view class="author">{{index+1}}. {{ item.name }}</view>
+            <block>-</block>
+            <block wx:for="{{ item.ar }}" wx:key="id">
+              {{item.name}}
+            </block>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class="right">
+      <image src="{{ RankingData.coverImgUrl }}" mode="widthFix"></image>
+      <view class="playcount">
+        {{ conver.conversionPlayCount(RankingData.playCount) }}
+      </view>
+    </view>
+  </view>
+</view>

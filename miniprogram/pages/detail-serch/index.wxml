@@ -1,0 +1,10 @@
+<!--pages/detail-serch/index.wxml-->
+<van-search
+  value="{{ searchText }}"
+  placeholder="请输入喜欢的歌手和歌曲"
+  background="#fafafa"
+  shape='round'
+  bind:search = 'handelSearch'
+></van-search>
+
+{{ searchText }}

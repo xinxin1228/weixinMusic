@@ -1,23 +1,43 @@
 // 这里是代码转化工具库
 
 // 播放量转化 3,1222 => 3.1万 1,2512,1212 => 1.2亿
-function conversionPlayCount(playCount) {
-  var str = String(playCount)
-  if(str.length >= 5){
-    const newStr = str.slice(0, str.length - 3)
-    const arr = newStr.split('')
-    arr.splice(newStr.length - 1, 0, '.')
-    str = arr.join('') + '万'
-    console.log(str)
-  } else if(str.length >= 9){
-    const newStr = str.slice(0, str.length - 3)
-    const arr = newStr.split('')
-    arr.splice(newStr.length - 1, 0, '.')
-    str = arr.join('') + '亿'
+// function conversionPlayCount(playCount) {
+//   var str = playCount + ''
+//   if(str.length >= 5){
+//     var newStr = str.slice(0, str.length - 3)
+//     var arr = newStr.split('')
+//     arr.splice(newStr.length - 1, 0, '.')
+//     str = arr.join('') + '万'
+//   } else if(str.length >= 9){
+//     var newStr = str.slice(0, str.length - 3)
+//     var arr = newStr.split('')
+//     arr.splice(newStr.length - 1, 0, '.')
+//     str = arr.join('') + '亿'
+//   }
+//   return str
+// }
+function conversionPlayCount(num){
+  var counter = parseInt(num)
+  if(counter > 100000000){
+    return (counter/100000000).toFixed(1) + '亿'
+  } else if(counter > 10000){
+    return (counter / 10000).toFixed(1) + '万'
+  } else {
+    return counter + ''
   }
-  return str
+}
+
+// 视频时长代码转化  
+function conversionDuration(num){
+  var counter = parseInt(num)
+  var f = counter/1000/60|0
+  f = f < 10 ? '0' + f : f
+  var s = counter/1000%60
+  s = s < 10 ? '0' + s : s
+  return f + ':' + s
 }
 
 module.exports = {
-  conversionPlayCount: conversionPlayCount
+  conversionPlayCount: conversionPlayCount,
+  conversionDuration: conversionDuration
 }

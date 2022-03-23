@@ -1,0 +1,7 @@
+<!-- 这是首页巅峰榜组件 -->
+<view class="peak">
+  <area-header title="巅峰榜" isShowMore="{{ falses }}"></area-header>
+  <block wx:for="{{ peakRanking }}" wx:key="name">
+    <playlist-item-v2 RankingData="{{ item }}"></playlist-item-v2>
+  </block>
+</view>

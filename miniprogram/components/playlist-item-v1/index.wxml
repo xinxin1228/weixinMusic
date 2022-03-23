@@ -1,0 +1,12 @@
+<!-- 这里是歌单子项组件 -->
+<wxs src="../../utils/conversion.wxs" module="conver"></wxs>
+
+<view class="playlist_item">
+  <view class="top">
+    <image mode="widthFix" src="{{ itemData.coverImgUrl }}"></image>
+    <view class="playCount">{{ conver.conversionPlayCount(itemData.playCount) }}</view>
+  </view>
+  <view class="down">
+    {{ itemData.name }}
+  </view>
+</view>

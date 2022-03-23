@@ -1,0 +1,23 @@
+<wxs src='../../utils/conversion.wxs' module="conversion"></wxs>
+
+<view class="recommend">
+  <text>推荐视频</text>
+  <block wx:for="{{ mvLists }}" wx:key="id">
+    <view 
+      class="list" 
+      bindtap="handelClick"
+      data-item='{{item}}'
+    >
+      <view class="cover">
+        <image src='{{ item.coverUrl }}' mode="aspectFit"></image>
+        <view class="info">
+          <view class="count">{{ conversion.conversionPlayCount(item.playTime) }}</view>
+        </view>
+      </view>
+      <view class="info">
+        <view class="title">{{ item.title }}</view>
+        <view class="author">{{ item.creator[0].userName }}</view>
+      </view>
+    </view>
+  </block>
+</view>

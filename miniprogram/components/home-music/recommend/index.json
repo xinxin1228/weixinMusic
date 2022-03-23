@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "area-header": "../../area-header/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-icon": "@vant/weapp/icon/index"
+  }
+}

@@ -1,0 +1,16 @@
+<!-- 这里是视频页面里面的视频组件 -->
+<wxs src='../../utils/conversion.wxs' module="conversion"></wxs>
+
+
+<view class="list">
+  <view class="cover">
+    <image src='{{item.cover}}' lazy-load='true' mode="widthFix"></image>
+    <view class="info">
+      <view class="count">{{ conversion.conversionPlayCount(item.playCount) }}</view>
+      <view class="duration">{{ conversion.conversionDuration(item.mv.videos[0].duration) }}</view>
+    </view>
+  </view>
+  <view class="content">
+    {{ item.name }} - {{ item.artistName }}
+  </view>
+</view>
